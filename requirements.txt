@@ -1,0 +1,23 @@
+
+
+
+
+!pip install pyspark kafka-python nltk
+
+from pyspark.sql import SparkSession, Row
+from pyspark.sql import functions as F
+from pyspark.sql.types import StringType, StructType, StructField
+
+import re
+import nltk
+from nltk.corpus import stopwords
+
+from pyspark.ml.feature import Tokenizer, StopWordsRemover, HashingTF, IDF
+
+from pyspark.ml.classification import LogisticRegression, RandomForestClassifier, LinearSVC
+
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator, BinaryClassificationEvaluator
+
+import os
+import time
+
